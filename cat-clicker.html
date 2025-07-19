@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Clicker Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            background: linear-gradient(to right, pink, plum);
+            color: #333;
+        }
+
+        #cat  {
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #cat:hover { 
+              transform: scale(1.05);
+        }
+        
+        #counter {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .shake {
+            animation: shake 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+   <h1>Click the Cat!</h1> 
+   <img id="cat" src="https://i.pinimg.com/originals/b6/a6/d5/b6a6d50de7eb36065b98ebd254d46cd5.jpg" alt="Cute Cat">
+   <div id="counter">Clicks: 0</div>
+
+    <audio id="meowSound" preload="auto">
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+</body>
+
+   <script>                                                                                                                          
+  let count = 0;
+    const cat = document.getElementById('cat');
+    const counter = document.getElementById('counter');
+    const meowSound = document.getElementById('meowSound');
+
+
+    cat.addEventListener('click', function () {
+        count++;
+        counter.textContent = `Clicks: ${count}`;  
+        meowSound.currentTime = 0;
+        meowSound.play();
+
+        cat.classList.add('shake');
+        setTimeout(() => {
+            cat.classList.remove('shake');
+        }, 300);
+    });
+ </script>
+
+</html>
