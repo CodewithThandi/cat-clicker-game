@@ -15,7 +15,7 @@
         #cat  {
             width: 300px;
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease;
         }
 
         #cat:hover { 
@@ -28,28 +28,25 @@
         }
 
         @keyframes shake {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            50% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-            100% { transform: rotate(0deg); }
+            0% { transform: rotate(0); }
+            25% { transform: rotate(-5px); }
+            50% { transform: rotate(5px); }
+            75% { transform: rotate(-5px); }
+            100% { transform: rotate(0); }
         }
 
         .shake {
-            animation: shake 0.3s;
+            animation: shake 0.4s;
         }
 
     </style>
 </head>
 <body>
    <h1>Click the Cat!</h1> 
-   <img id="cat" src="https://i.pinimg.com/originals/b6/a6/d5/b6a6d50de7eb36065b98ebd254d46cd5.jpg" alt="Cute Cat">
+   <img id="cat" src="https://wallpapers.com/images/hd/ugly-cat-pictures-29bvym5p5noaqikb.jpg" alt="Cute Cat">
    <div id="counter">Clicks: 0</div>
 
-    <audio id="meowSound" preload="auto">
-    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>
+    
 </body>
 
    <script>                                                                                                                          
